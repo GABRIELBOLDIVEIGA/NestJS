@@ -12,4 +12,10 @@ export class UsuarioRepository {
   async listarUsuarios() {
     return this.usuarios;
   }
+
+  async existeComEmail(email: string) {
+    const possivelUsuarios = this.usuarios.find(usuario => usuario.email === email);
+
+    return possivelUsuarios != undefined;
+  }
 }
